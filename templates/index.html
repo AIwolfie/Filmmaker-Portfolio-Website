@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmmaker Portfolio</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar">
+    <!-- Hamburger Menu (Left Side on Mobile) -->
+    <div class="hamburger">☰</div>
+
+    <!-- Logo (Right Side on Mobile) -->
+    <div class="logo">
+        <img src="static/images/bg.jpg" alt="Logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+        <!-- Social Icons (Visible in Dropdown for Mobile) -->
+        <li class="social-icons mobile-only">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </li>
+    </ul>
+
+    <!-- Social Icons (Visible on PC) -->
+    <div class="social-icons desktop-only">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</nav>
+
+<!-- Hero Section with Image Background -->
+<div class="hero">
+    <img src="static/images/backkground.jpg" alt="Background Image">
+    <div class="overlay">
+        <h1>Capturing Memories, Frame by Frame</h1>
+        <p>Your story, beautifully told.</p>
+        <a href="#portfolio" class="btn">View Portfolio</a>
+    </div>
+</div>
+
+
+    <!-- About Section -->
+<section id="about">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="static/images/bg.jpg" alt="About Me">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a passionate filmmaker dedicated to capturing emotions through the lens. With years of experience in videography and editing, I bring stories to life, ensuring every frame tells a story. Let's create something extraordinary together.</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Services Section -->
+<section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-item">
+            <i class="fas fa-video"></i>
+            <h3>Wedding Videography</h3>
+            <p>We craft unforgettable wedding films that capture every emotion and moment.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-film"></i>
+            <h3>Cinematic Edits</h3>
+            <p>Enhance your video with professional-grade cinematic editing.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-camera"></i>
+            <h3>Pre-Wedding Shoots</h3>
+            <p>Capture your love story beautifully before the big day.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Portfolio Section with Lightbox -->
+    <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="static/images/sample1.jpg" alt="Wedding" onclick="openLightbox(this.src)">
+                <p>Wedding Highlights</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="static/images/sample2.jpg" alt="Pre-Wedding" onclick="openLightbox(this.src)">
+                <p>Pre-Wedding Moments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox for Portfolio Images -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <h2>Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-item">
+                <p>"Absolutely loved our wedding video! It captured every moment beautifully."</p>
+                <h4>- Client A</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The editing was superb. Highly recommended!"</p>
+                <h4>- Client B</h4>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form action="/submit" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer with Social Media Links -->
+    <footer>
+        <p>&copy; 2025 Filmmaker Portfolio | All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="static/scripts.js"></script>
+</body>
+</html>
