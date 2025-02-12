@@ -18,13 +18,14 @@
 
     <!-- Logo (Right Side on Mobile) -->
     <div class="logo">
-        <img src="static/images/bg.jpg" alt="Logo">
+        <img src="static/images/Screenshot 2024-07-06 104910.png" alt="Logo">
     </div>
 
     <!-- Navigation Menu -->
     <ul class="nav-menu">
-        <li><a href="#hero">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#services">services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -39,9 +40,9 @@
 
     <!-- Social Icons (Visible on PC) -->
     <div class="social-icons desktop-only">
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@filmmakerofficial2.o?si=as7G4qzLm337MTTO"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/filmmaker_2.o?igsh=MWx0N2dkZzh0dnQ1Mg=="><i class="fab fa-instagram"></i></a>
+        <a href="whatsapp://send?phone=+919904863345"><i class="fab fa-whatsapp"></i></a>
     </div>
 </nav>
 
@@ -60,7 +61,7 @@
 <section id="about">
     <div class="about-container">
         <div class="about-image">
-            <img src="static/images/bg.jpg" alt="About Me">
+            <img src="static/images/Screenshot 2024-07-06 104910.png" alt="About Me">
         </div>
         <div class="about-text">
             <h2>About Me</h2>
@@ -93,26 +94,25 @@
     </div>
 </section>
 
-    <!-- Portfolio Section with Lightbox -->
-    <section id="portfolio" class="section">
-        <h2>Portfolio</h2>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <img src="static/images/sample1.jpg" alt="Wedding" onclick="openLightbox(this.src)">
-                <p>Wedding Highlights</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="static/images/sample2.jpg" alt="Pre-Wedding" onclick="openLightbox(this.src)">
-                <p>Pre-Wedding Moments</p>
-            </div>
+<!-- Portfolio Section -->
+<section id="portfolio" class="section">
+    <div class="portfolio-container">
+        <!-- Left Section: Description -->
+        <div class="portfolio-text">
+            <h2>Your Moments, <span>My Vision.</span></h2>
+            <p>I specialize in transforming ordinary clips into extraordinary visual stories, blending creativity, emotion, and cinematic techniques to craft unforgettable memories. Every frame is carefully curated to capture the essence of each moment, evoking deep emotions and preserving cherished experiences in a truly artistic way</p>
+            <a href="/portfolio" class="btn">View Portfolio</a>
         </div>
-    </section>
 
-    <!-- Lightbox for Portfolio Images -->
-    <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="">
+        <!-- Right Section: Cards Display -->
+        <div class="portfolio-cards">
+            <img src="static/images/IMG-20241201-WA0017.jpg" alt="Ace Card" class="card card1">
+            <img src="static/images/IMG-20241201-WA0017.jpg" alt="Two Card" class="card card2">
+            <img src="static/images/IMG-20241201-WA0017.jpg" alt="Three Card" class="card card3">
+        </div>
     </div>
+</section>
+
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="section">
@@ -131,15 +131,17 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <form action="/submit" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Mobile Number" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="responseMessage" style="display: none; color: white; margin-top: 10px;"></p>
+</section>
 
     <!-- Footer with Social Media Links -->
     <footer>

@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const whatsappButton = document.querySelector(".whatsapp-link");
     if (whatsappButton) {
         whatsappButton.addEventListener("click", () => {
-            const phone = "YOUR_PHONE_NUMBER"; // Replace with the actual phone number
+            const phone = "6352191121"; // Replace with the actual phone number
             const message = encodeURIComponent("Hello! I'm interested in your services.");
-            window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+            window.open(`https://wa.me/qr/TVMZTXF775RJP1?text=${message}`, "_blank");
         });
     }
 });
@@ -55,4 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
         navMenu.classList.toggle("active");
     });
+});
+
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    let response = await fetch("/submit", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json();
+
+    if (result.success) {
+        document.getElementById("responseMessage").textContent = result.message;
+        document.getElementById("responseMessage").style.display = "block";
+
+        // Redirect user to WhatsApp
+        setTimeout(() => {
+            window.location.href = result.whatsapp_link;
+        }, 2000);
+    }
 });
