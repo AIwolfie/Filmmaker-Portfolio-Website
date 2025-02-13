@@ -79,3 +79,44 @@ document.getElementById("contactForm").addEventListener("submit", async function
         }, 2000);
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    let index = 0;
+    const testimonials = document.querySelectorAll(".testimonial-item");
+    const totalTestimonials = testimonials.length;
+    const prevBtn = document.getElementById("prevTestimonial");
+    const nextBtn = document.getElementById("nextTestimonial");
+
+    function showTestimonial(newIndex) {
+        testimonials.forEach((item, i) => {
+            item.classList.remove("active");
+            if (i === newIndex) item.classList.add("active");
+        });
+    }
+
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + totalTestimonials) % totalTestimonials;
+        showTestimonial(index);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % totalTestimonials;
+        showTestimonial(index);
+    });
+
+    showTestimonial(index);
+});
+
+        // YouTube Modal Script
+        document.querySelectorAll('.youtube-link').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                document.getElementById('modal-video').src = item.href + "?autoplay=1";
+                document.getElementById('videoModal').style.display = "block";
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('videoModal').style.display = "none";
+            document.getElementById('modal-video').src = "";
+        });
