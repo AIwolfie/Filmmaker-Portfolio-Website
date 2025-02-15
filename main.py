@@ -11,6 +11,26 @@ def home():
 def portfolio():
     return render_template("portfolio.html")
 
+@app.route('/reels')
+def reels():
+    return render_template('reels.html')
+
+@app.route('/event-teasers')
+def event_teasers():
+    return render_template('event_teasers.html')
+
+@app.route('/songs')
+def songs():
+    return render_template('songs.html')
+
+@app.route('/short-films')
+def short_films():
+    return render_template('short_films.html')
+
+@app.route('/event-highlights')
+def event_highlights():
+    return render_template('event_highlights.html')
+
 @app.route("/submit", methods=["POST"])
 def submit():
     name = request.form.get("name")
