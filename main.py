@@ -29,9 +29,9 @@ def event_teasers():
 def photos():
     return render_template('photos.html')
 
-@app.route('/short-films')
+@app.route('/short-film')
 def short_films():
-    return render_template('short_films.html')
+    return render_template('short-film.html')
 
 @app.route('/event-highlights')
 def event_highlights():

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Work | Wedding Portfolio</title>
+    <title>Short Film | Portfolio</title>
     <style>
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,15 +15,15 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0a0a;
-            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
         }
 
         /* Header Styling */
         header {
             text-align: center;
-            padding: 2rem;
+            padding: 20px;
             background: #121212;
-            color: white;
             position: sticky;
             top: 0;
             width: 100%;
@@ -31,18 +32,17 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
         .back-home {
             display: inline-block;
             text-decoration: none;
             color: #ff6600;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
             border: 2px solid #ff6600;
             transition: all 0.3s ease;
         }
@@ -55,27 +55,26 @@
 
         /* Portfolio Grid */
         #portfolio-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .portfolio-item {
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             background: #1e1e1e;
-            padding: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .portfolio-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(255, 102, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.2);
         }
 
         /* Thumbnails */
@@ -83,8 +82,6 @@
             position: relative;
             width: 100%;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            border-radius: 8px;
-            overflow: hidden;
         }
 
         .thumbnail {
@@ -102,57 +99,48 @@
         }
 
         .reel-title {
-            margin-top: 1rem;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
         }
 
         /* Video Modal */
-        .modal {
+        #videoModal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 2000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 1;
         }
 
         .modal-content {
             position: relative;
             width: 90%;
-            max-width: 1200px;
-            aspect-ratio: 16/9;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
         }
 
-        .modal iframe {
+        #videoFrame {
             width: 100%;
             height: 100%;
-            border-radius: 12px;
             border: none;
+            border-radius: 10px;
         }
 
         .close-modal {
             position: absolute;
-            top: -13px;
+            top: -20px;
             right: 0;
+            font-size: 30px;
             color: white;
-            font-size: 2rem;
             cursor: pointer;
             background: none;
             border: none;
-            padding: 0.5rem;
             transition: color 0.3s ease;
         }
 
@@ -164,80 +152,58 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>My Work</h1>
+        <h1>Short Film</h1>
         <a href="/" class="back-home">← Back to Home</a>
     </header>
 
     <!-- Portfolio Section -->
-    <section id="portfolio-gallery">
-        <!-- Wedding Highlights -->
-        <div class="portfolio-item" data-video="https://drive.google.com/file/d/1HDV3iR6Q75sBUkVEmvsPdoNfsnuun1SR/preview">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="https://drive.google.com/thumbnail?id=1HDV3iR6Q75sBUkVEmvsPdoNfsnuun1SR" alt="Wedding Highlights">
-            </div>
+    <div class="portfolio-item" data-video="https://drive.google.com/embed/1J7ozvw1yEURY2uHuzFVCJwAMqZqKiTY_">
+        <div class="thumbnail-container">
+            <img class="thumbnail" src="https://drive.google.com/thumbnail?id=1J7ozvw1yEURY2uHuzFVCJwAMqZqKiTY_" alt="Short Film">
         </div>
-
-        <!-- Pre-Wedding Moments -->
-        <div class="portfolio-item" data-video="https://drive.google.com/file/d/1HCWdSogBB02aE3Sq9xzVSU5lkfsad5e3/preview">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="https://drive.google.com/thumbnail?id=1HCWdSogBB02aE3Sq9xzVSU5lkfsad5e3" alt="Pre-Wedding Moments">
-            </div>
-        </div>
-
-        <!-- Engagement Ceremony -->
-        <div class="portfolio-item" data-video="https://drive.google.com/file/d/1HXUUedJPK_F7qSeqjYJPsd1pGGpmpqPE/preview">
-            <div class="thumbnail-container">
-                <img class="thumbnail" src="https://drive.google.com/thumbnail?id=1HXUUedJPK_F7qSeqjYJPsd1pGGpmpqPE" alt="Engagement Ceremony">
-            </div>
-        </div>
-    </section>
+    </div>
+    
 
     <!-- Video Modal -->
-    <div class="modal" id="videoModal">
+    <div id="videoModal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeVideo()">×</button>
+            <button class="close-modal" onclick="closeVideo()">&times;</button>
             <iframe id="videoFrame" allowfullscreen></iframe>
         </div>
     </div>
 
     <script>
-        // Get DOM elements
         const modal = document.getElementById('videoModal');
         const videoFrame = document.getElementById('videoFrame');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-        // Add click handlers to portfolio items
         portfolioItems.forEach(item => {
             item.addEventListener('click', () => {
-                const videoUrl = item.dataset.video;
+                const videoUrl = item.getAttribute('data-video');
                 openVideo(videoUrl);
             });
         });
 
-        // Open video modal
         function openVideo(url) {
             videoFrame.src = url;
-            modal.classList.add('active');
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
 
-        // Close video modal
         function closeVideo() {
             videoFrame.src = '';
-            modal.classList.remove('active');
+            modal.style.display = 'none';
             document.body.style.overflow = ''; // Restore scrolling
         }
 
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
                 closeVideo();
             }
         });
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
                 closeVideo();
             }
         });
